@@ -1,14 +1,10 @@
 {
-  "name": "vue-alert",
-  "version": "0.0.1",
+  "name": "@vuejs-pt/vue-alert",
+  "version": "0.0.2",
   "description": "Alert bootstrap style for Vue.js",
   "license": "MIT",
   "repository": "vuejs-pt/vue-alert",
-  "author": {
-    "name": "David Picarra",
-    "email": "daviddcp@gmail.com",
-    "url": "github.com/davidpicarra"
-  },
+  "author": "David Picarra",
   "engines": {
     "node": ">=4"
   },
@@ -17,7 +13,7 @@
     "lint": "eslint --ext .js,.vue src",
     "test": "npm run lint && jest --coverage && npm run build"
   },
-  "main": "dist/vue-alert.es5.js",
+  "main": "dist/vue-alert.min.js",
   "keywords": [
     "vue-alert",
     "vue-alert bootstrap"
