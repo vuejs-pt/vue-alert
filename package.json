@@ -15,10 +15,7 @@
     "preversion": "npm run test && npm run build",
     "postversion": "git push origin master --follow-tags && npm publish"
   },
-  "pre-commit": [
-    "test",
-    "build"
-  ],
+  "pre-commit": ["test"],
   "main": "dist/@vuejs-pt/vue-alert.min.js",
   "keywords": [
     "vue-alert",
