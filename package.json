@@ -1,6 +1,6 @@
 {
   "name": "@vuejs-pt/vue-alert",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Alert bootstrap style for Vue.js",
   "license": "MIT",
   "repository": "vuejs-pt/vue-alert",
@@ -15,7 +15,9 @@
     "preversion": "npm run test && npm run build",
     "postversion": "git push origin master --follow-tags && npm publish"
   },
-  "pre-commit": ["test"],
+  "pre-commit": [
+    "test"
+  ],
   "main": "dist/@vuejs-pt/vue-alert.min.js",
   "keywords": [
     "vue-alert",
