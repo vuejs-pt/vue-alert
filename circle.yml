@@ -12,3 +12,4 @@ dependencies:
   override:
     - yarn
     - yarn test
+    - yarn build

@@ -2,7 +2,7 @@
  * Install plugin.
  */
 import VueAlert from './VueAlert.vue'
-import { version } from '../package.json'
+
 
 function plugin (Vue, options) {
   if (plugin.installed) return
@@ -30,8 +30,6 @@ function plugin (Vue, options) {
     }
   })
 }
-
-plugin.version = version
 
 export default plugin
 
