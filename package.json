@@ -12,9 +12,10 @@
     "build": "rollup -c",
     "lint": "eslint --ext .js,.vue src",
     "test": "npm run lint && jest --coverage",
-    "preversion": "npm run test && npm run build"
+    "preversion": "npm run test && npm run build",
+    "postversion": "git push origin master --follow-tags && npm publish"
   },
-  "pre-commit": ["test"],
+  "pre-commit": ["test", "build"],
   "main": "dist/@vuejs-pt/vue-alert.min.js",
   "keywords": [
     "vue-alert",

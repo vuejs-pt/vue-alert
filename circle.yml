@@ -11,5 +11,4 @@ dependencies:
     - "~/.yarn-cache"
   override:
     - yarn
-    - yarn test
     - yarn build
