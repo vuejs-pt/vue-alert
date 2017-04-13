@@ -21,7 +21,7 @@
   "pre-commit": [
     "test"
   ],
-  "main": "dist/@vuejs-pt/vue-alert.min.js",
+  "main": "dist/vuealert.min.js",
   "keywords": [
     "vue-alert",
     "vue-alert bootstrap"
