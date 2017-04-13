@@ -3,7 +3,10 @@
   "version": "0.3.2",
   "description": "Alert bootstrap style for Vue.js",
   "license": "MIT",
-  "repository": "vuejs-pt/vue-alert",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs-pt/vue-alert.git"
+  },
   "author": "David Picarra",
   "engines": {
     "node": ">=4"

@@ -4,6 +4,7 @@ import fs from 'fs'
 import sass from 'node-sass'
 
 export const pack = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'package.json'), 'utf8'))
+export const name = pack.name.replace(/^.*\/(.*)$/, '$1').replace('-', '')
 
 function ensureDirectoryExistence (filePath) {
   const directory = path.dirname(filePath)
@@ -45,7 +46,7 @@ export default {
     })
 
     fs.writeFile(
-        path.resolve(distDir, `${pack.name}.scss`),
+        path.resolve(distDir, `${name}.scss`),
         outputs.map((output) => `@import './scss/${output.replace(/\.[a-z0-9]+$/i, '')}'`).join('\n'),
         (err) => {
           if (err) throw err
@@ -58,7 +59,7 @@ export default {
     }, (err, result) => {
       if (err) throw err
 
-      const output = path.resolve(distDir, `${pack.name}.min.css`)
+      const output = path.resolve(distDir, `${name}.min.css`)
       fs.writeFile(output, result.css, (err) => {
         if (err) throw err
       })
@@ -70,7 +71,7 @@ export default {
     }, (err, result) => {
       if (err) throw err
 
-      const output = path.resolve(distDir, `${pack.name}.css`)
+      const output = path.resolve(distDir, `${name}.css`)
       fs.writeFile(output, result.css, (err) => {
         if (err) throw err
       })
