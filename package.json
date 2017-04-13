@@ -14,6 +14,7 @@
     "test": "npm run lint && jest --coverage",
     "preversion": "npm run test && npm run build"
   },
+  "pre-commit": ["test"],
   "main": "dist/@vuejs-pt/vue-alert.min.js",
   "keywords": [
     "vue-alert",
@@ -52,6 +53,7 @@
     "jest-cli": "^19.0.2",
     "jest-vue-preprocessor": "^0.2.0",
     "node-sass": "^4.5.2",
+    "pre-commit": "^1.2.2",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-buble": "^0.15.0",

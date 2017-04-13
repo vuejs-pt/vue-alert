@@ -3,7 +3,6 @@
  */
 import VueAlert from './VueAlert.vue'
 
-
 function plugin (Vue, options) {
   if (plugin.installed) return
   plugin.installed = true
