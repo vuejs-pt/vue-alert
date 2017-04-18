@@ -10,5 +10,5 @@ dependencies:
   cache_directories:
     - "~/.yarn-cache"
   override:
-    - yarn
+    - yarn --force
     - yarn build
