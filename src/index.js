@@ -6,7 +6,6 @@ import VueAlert from './VueAlert.vue'
 function plugin (Vue, options) {
   if (plugin.installed) return
   plugin.installed = true
-  Object.assign(VueAlert.options, options)
   Vue.component('vue-alert', VueAlert)
   Object.defineProperties(Vue.prototype, {
     $alert: {

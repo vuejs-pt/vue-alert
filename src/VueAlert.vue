@@ -13,7 +13,7 @@ export default {
     return {
       alertMessage: '',
       alertType: '',
-      transition: '',
+      alertTransition: '',
       default: {
         message: '',
         type: 'info',
@@ -27,12 +27,14 @@ export default {
       this.default.message = message
       this.default.type = type
       this.default.delay = delay
+      this.default.transition = transition
       return this
     },
-    show ({ message = this.default.message, type = this.default.type, delay = this.default.delay } = {}) {
+    show ({ message = this.default.message, type = this.default.type, delay = this.default.delay, transition = this.default.transition } = {}) {
       this.alertShow = true
       this.alertMessage = message
       this.alertType = `alert-${type}`
+      this.alertTransition = transition
       if (this.alertTimeout) {
         clearTimeout(this.alertTimeout)
       }
