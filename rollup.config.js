@@ -19,8 +19,8 @@ const config = {
   plugins: [
     vue(vueConfig),
     babel(),
-    uglify({}, minify),
-    buble()
+    buble(),
+    uglify({}, minify)
   ],
   useStrict: false,
   cache

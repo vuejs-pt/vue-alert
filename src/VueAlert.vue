@@ -1,5 +1,5 @@
 <template>
-  <transition :name="transition">
+  <transition :name="alertTransition">
     <div class="alert" :class="alertType">
       <p>{{alertMessage}}</p>
     </div>
