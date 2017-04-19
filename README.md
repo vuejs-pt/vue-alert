@@ -1,6 +1,4 @@
-# vue-alert
-
-<a href="https://circleci.com/gh/vuejs-pt/vue-alert/tree/master"><img src="https://circleci.com/gh/vuejs-pt/vue-alert.png?style=shield&circle-token=:circle-token" alt="Build Status"></a>
+# vue-alert [![Build Status](https://circleci.com/gh/vuejs-pt/vue-alert/tree/master.png?style=shield)](https://circleci.com/gh/vuejs-pt/vue-alert)
 
 # Table of Contents
 * [___Requirements___](#requirements)
