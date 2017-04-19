@@ -1,6 +1,6 @@
 <template>
   <transition :name="alertTransition">
-    <div class="alert" :class="alertType">
+    <div class="vue-alert alert" :class="alertType">
       <p>{{alertMessage}}</p>
     </div>
   </transition>

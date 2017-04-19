@@ -19,7 +19,11 @@ $ npm install vue-alert
 # yarn
 $ yarn add vue-alert
 ```
+
+
 # Usage
+
+The component vue-alert must be included either in the component using the vue-alert or a parent of this component, for example if there's a vue-alert instance at the root of the app.
 
 main.js
 
@@ -31,8 +35,10 @@ import App from './App'
 Vue.use(VueAlert)
 
 new Vue({
-  ...App
-}).$mount('#app')
+  el: '#app',
+  template: '<App/>',
+  components: { App }
+})
 
 
 ```
@@ -43,20 +49,22 @@ App.vue
 <template>
     <div id="app">
         <vue-alert></vue-alert>
-        <router-view></router-view>
     </div>
 </template>
 
 <script>
 export default {
   mounted () {
-    this.$alert.show({
-      message: 'Component mounted!',
-      type: 'success'
-    })
+    this.$alert.success({ message: 'Component mounted!' })
   }
 }
 </script>
+
+<style>
+.vue-alert {
+  margin-top: 10px;
+}
+</style>
 ```
 
 # License
