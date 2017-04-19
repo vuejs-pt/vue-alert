@@ -2,7 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
-
 module.exports = {
   devtool: 'inline-source-map',
   entry: path.resolve(__dirname, 'app.js'),
