@@ -21,10 +21,10 @@
 # Installation
 ```bash
 # npm
-$ npm install vue-alert
+$ npm install @vuejs-pt/vue-alert
 
 # yarn
-$ yarn add vue-alert
+$ yarn add @vuejs-pt/vue-alert
 ```
 
 
