@@ -13,7 +13,7 @@
 * [___License___](#license)
 
 # Demo
-[__Demo__](https://vuejs-pt.github.io/vue-alert/dist/example/)
+[__Demo__](https://vuejs-pt.github.io/vue-alert/example/dist/)
 
 # Requirements
 - [Vue.js](https://github.com/vuejs/vue) `2.x`  

@@ -5,7 +5,7 @@ const webpackConfig = {
   devtool: 'inline-source-map',
   entry: path.resolve(__dirname, 'app.js'),
   output: {
-    path: path.join(__dirname, '../dist/example'),
+    path: path.join(__dirname, 'dist/'),
     filename: '[name].js',
     chunkFilename: '[id].chunk.js',
     publicPath: ''
