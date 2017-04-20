@@ -1,6 +1,6 @@
 {
   "name": "@vuejs-pt/vue-alert",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "description": "Alert bootstrap style for Vue.js",
   "license": "MIT",
   "repository": {
