@@ -20,12 +20,11 @@
     "test": "npm run lint && jest",
     "test:dev": "jest --watchAll",
     "prebuild": "npm run clean -s",
-    "preversion": "npm run build && npm run build:demo && npm run test",
+    "preversion": "npm run build && npm run test && npm run build:demo",
     "postversion": "git push origin master --follow-tags && npm publish"
   },
   "pre-commit": [
     "build",
-    "build:demo",
     "test"
   ],
   "main": "dist/vuealert.common.js",
