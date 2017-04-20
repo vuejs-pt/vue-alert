@@ -1,4 +1,4 @@
-# vue-alert 
+# @vuejs-pt/vue-alert 
 [![CircleCI](https://img.shields.io/circleci/project/github/vuejs-pt/vue-alert.svg)](https://circleci.com/gh/vuejs-pt/vue-alert)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vuejs-pt/vue-alert/master/LICENSE)
 [![Vue 2.x](https://img.shields.io/badge/vue-2.x-green.svg)](https://vuejs.org/)
