@@ -2,13 +2,13 @@ const express = require('express')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
-const WebpackConfig = require('./webpack.config')
+const webpackConfig = require('./webpack.config')
 
 const app = express()
-const compiler = webpack(WebpackConfig)
+const compiler = webpack(webpackConfig)
 
 app.use(webpackDevMiddleware(compiler, {
-  publicPath: '/__build__/',
+  publicPath: webpackConfig.output.publicPath,
   quiet: true
 }))
 

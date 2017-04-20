@@ -1,10 +1,19 @@
-# vue-alert [![Build Status](https://circleci.com/gh/vuejs-pt/vue-alert/tree/master.png?style=shield)](https://circleci.com/gh/vuejs-pt/vue-alert)
+# vue-alert 
+[![CircleCI](https://img.shields.io/circleci/project/github/vuejs-pt/vue-alert.svg)](https://circleci.com/gh/vuejs-pt/vue-alert)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vuejs-pt/vue-alert/master/LICENSE)
+[![Vue 2.x](https://img.shields.io/badge/vue-2.x-green.svg)](https://vuejs.org/)
+[![npm](https://img.shields.io/npm/v/@vuejs-pt/vue-alert.svg)](https://www.npmjs.com/package/@vuejs-pt/vue-alert)
+[![GitHub issues](https://img.shields.io/github/issues/vuejs-pt/vue-alert.svg)](https://github.com/vuejs-pt/vue-alert/issues)
 
 # Table of Contents
+* [___Demo___](#demo)
 * [___Requirements___](#requirements)
 * [___Installation___](#installation)
 * [___Usage___](#usage)
 * [___License___](#license)
+
+# Demo
+[__Demo__](https://vuejs-pt.github.io/vue-alert/dist/example/)
 
 # Requirements
 - [Vue.js](https://github.com/vuejs/vue) `2.x`  

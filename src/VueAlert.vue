@@ -1,6 +1,6 @@
 <template>
-  <transition :name="alertTransition">
-    <div class="vue-alert alert" :class="alertType">
+  <transition :name="alertTransition"  mode="out-in">
+    <div class="vue-alert alert" :class="alertType" :key="triggerTransition">
       <p>{{alertMessage}}</p>
     </div>
   </transition>
@@ -14,6 +14,7 @@ export default {
       alertMessage: '',
       alertType: '',
       alertTransition: '',
+      triggerTransition: false,
       default: {
         message: '',
         type: 'info',
@@ -45,6 +46,7 @@ export default {
           })
         }, delay)
       }
+      this.triggerTransition = !this.triggerTransition
     },
     hide () {
       this.alertShow = false
@@ -67,7 +69,7 @@ export default {
 
 <style>
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
+  transition: opacity .3s
 }
 .fade-enter, .fade-leave-to {
   opacity: 0

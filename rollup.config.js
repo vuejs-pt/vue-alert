@@ -1,23 +1,27 @@
+import path from 'path'
+import fs from 'fs'
 import vue from 'rollup-plugin-vue'
 import buble from 'rollup-plugin-buble'
 import uglify from 'rollup-plugin-uglify'
 import babel from 'rollup-plugin-babel'
 import { minify } from 'uglify-js-harmony'
 
-import { default as vueConfig, name } from './config/rollup-plugin-vue.config'
+const pack = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'package.json'), 'utf8'))
+const name = pack.name.replace(/^.*\/(.*)$/, '$1').replace('-', '')
 
 let cache
 
 const config = {
   entry: 'src/index.js',
   targets: [
-    { format: 'es', dest: `dist/${name}.js` },
-    { format: 'cjs', dest: `dist/${name}.common.js` },
-    { format: 'iife', dest: `dist/${name}.min.js`, moduleName: name }
+    { format: 'cjs', dest: `dist/${name}.common.js` }
   ],
   moduleName: name,
   plugins: [
-    vue(vueConfig),
+    vue({
+      compileTemplate: true,
+      css: true
+    }),
     babel(),
     buble(),
     uglify({}, minify)

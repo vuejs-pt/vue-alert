@@ -1,15 +1,14 @@
 const path = require('path')
 const webpack = require('webpack')
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
-module.exports = {
+const webpackConfig = {
   devtool: 'inline-source-map',
   entry: path.resolve(__dirname, 'app.js'),
   output: {
-    path: path.join(__dirname, '__build__'),
+    path: path.join(__dirname, '../dist/example'),
     filename: '[name].js',
     chunkFilename: '[id].chunk.js',
-    publicPath: '/__build__/'
+    publicPath: ''
   },
   module: {
     rules: [
@@ -31,7 +30,20 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new FriendlyErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   ]
 }
+
+if (process.env.NODE_ENV !== 'production') {
+  const HtmlWebpackPlugin = require('html-webpack-plugin')
+  webpackConfig.plugins.push(new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: 'example/index.html',
+    inject: true
+  }))
+
+  const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+  webpackConfig.plugins.push(new FriendlyErrorsPlugin())
+}
+
+module.exports = webpackConfig

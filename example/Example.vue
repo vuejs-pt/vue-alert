@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <div class="row">
-      <h1>Example vue-alert</h1>
+      <h1>Example @vuejs-pt/vue-alert</h1>
       <button class="btn btn-default" v-for="buttonType in this.types" @click="show">{{ buttonType }}</button>
       <vue-alert></vue-alert>
     </div>
@@ -31,5 +31,9 @@ export default {
 <style>
 .vue-alert {
   margin-top: 10px;
+}
+
+button {
+  margin: 5px;
 }
 </style>
