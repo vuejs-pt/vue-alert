@@ -133,6 +133,11 @@ describe('VueAlert.vue', () => {
           vm.hide()
           expect(vm.alertShow).toEqual(false)
         })
+        it('should clearTimeout if already set', () => {
+          vm.alertTimeout = 'mockTimeout'
+          vm.hide()
+          expect(clearTimeout).toBeCalledWith('mockTimeout')
+        })
       })
 
       describe('danger', () => {

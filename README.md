@@ -9,6 +9,7 @@
 * [___Demo___](#demo)
 * [___Requirements___](#requirements)
 * [___Installation___](#installation)
+* [___API___](#api)
 * [___Usage___](#usage)
 * [___License___](#license)
 
@@ -27,12 +28,94 @@ $ npm install @vuejs-pt/vue-alert
 $ yarn add @vuejs-pt/vue-alert
 ```
 
+# API
+
+Available methods inside a VueJS component
+
+The same parameters apply to all the methods in `$alert` expect the method `hide`
+
+Parameter | Type |Default| Description
+--------- | ---- | ------|-----------
+message | `string` | _empty_ | Message to be shown
+type | `string` | `fade` | Type of transition
+duration | `number` | 5000 | The duration for which the alert will be shown
+transition | `string` | `fade` | Transition fade when switching between alerts, can be [user defined](https://vuejs.org/v2/guide/transitions.html)
+
+If any of the values is not present on the method call then the default values will be used.
+
+## Set default values
+```javascript
+this.$alert.setDefault({
+  message,
+  type,
+  delay,
+  transition
+})
+```
+
+## Show an alert
+```javascript
+this.$alert.show({
+  message,
+  type,
+  delay,
+  transition
+})
+```
+
+## Show an alert type info
+```javascript
+this.$alert.info({
+  message,
+  delay,
+  transition
+})
+```
+
+## Show an alert type success
+```javascript
+this.$alert.success({
+  message,
+  delay,
+  transition
+})
+```
+
+## Show an alert type warning
+```javascript
+this.$alert.warning({
+  message,
+  delay,
+  transition
+})
+```
+
+## Show an alert type danger
+```javascript
+this.$alert.danger({
+  message,
+  delay,
+  transition
+})
+```
+
+## Hide alert
+```javascript
+this.$alert.hide()
+```
 
 # Usage
 
 The component vue-alert must be included either in the component using the vue-alert or a parent of this component, for example if there's a vue-alert instance at the root of the app.
 
-It is possible to access the vue-alert component using the $alert variable on the component instance as shown below
+It is possible to access the vue-alert component using the $alert variable on the component instance as shown in the below example.
+
+The default bootstrap style are applied by default to the alert but this can be overriden by applying a new style to the following classes:
+- alert
+- alert-info
+- alert-success
+- alert-warning
+- alert-danger
 
 main.js
 
