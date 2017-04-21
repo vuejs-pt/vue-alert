@@ -21,6 +21,7 @@
     "test:dev": "jest --watchAll",
     "prebuild": "npm run clean -s",
     "preversion": "npm run build && npm run test && npm run build:demo",
+    "version": "git add -A dist && git add -A example/dist",
     "postversion": "git push origin master --follow-tags && npm publish"
   },
   "pre-commit": [
