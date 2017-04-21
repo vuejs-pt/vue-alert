@@ -69,8 +69,4 @@ button:hover {
 p {
   margin: 0;
 }
-
-.alert-info {
-  color: purple;
-}
 </style>
