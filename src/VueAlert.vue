@@ -17,7 +17,7 @@ export default {
       alertTransition: '',
       triggerTransition: true,
       default: {
-        delay: 5000,
+        duration: 5000,
         forceRender: true,
         message: '',
         type: 'info',
@@ -26,15 +26,15 @@ export default {
     }
   },
   methods: {
-    setDefault ({ message = this.default.message, type = this.default.type, delay = this.default.delay, transition = this.default.transition, forceRender = this.default.forceRender } = {}) {
+    setDefault ({ message = this.default.message, type = this.default.type, duration = this.default.duration, transition = this.default.transition, forceRender = this.default.forceRender } = {}) {
       this.default.message = message
       this.default.type = type
-      this.default.delay = delay
+      this.default.duration = duration
       this.default.transition = transition
       this.default.forceRender = forceRender
       return this
     },
-    show ({ message = this.default.message, type = this.default.type, delay = this.default.delay, transition = this.default.transition, forceRender = this.default.forceRender } = {}) {
+    show ({ message = this.default.message, type = this.default.type, duration = this.default.duration, transition = this.default.transition, forceRender = this.default.forceRender } = {}) {
       this.alertShow = true
       this.alertMessage = message
       this.alertType = `alert-${type}`
@@ -43,12 +43,12 @@ export default {
       if (this.alertTimeout) {
         clearTimeout(this.alertTimeout)
       }
-      if (delay) {
+      if (duration) {
         this.alertTimeout = setTimeout(() => {
           this.show({
-            delay: false
+            duration: false
           })
-        }, delay)
+        }, duration)
       }
       if (this.alertForceRender) {
         this.triggerTransition = !this.triggerTransition

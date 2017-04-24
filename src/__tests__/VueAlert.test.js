@@ -17,7 +17,7 @@ describe('VueAlert.vue', () => {
       alertTransition: '',
       alertType: '',
       default: {
-        delay: 5000,
+        duration: 5000,
         forceRender: true,
         message: '',
         transition: 'fade',
@@ -47,9 +47,9 @@ describe('VueAlert.vue', () => {
           vm.setDefault({ type: 'mockType' })
           expect(vm.default.type).toEqual('mockType')
         })
-        it('should set delay', () => {
-          vm.setDefault({ delay: 'mockDelay' })
-          expect(vm.default.delay).toEqual('mockDelay')
+        it('should set duration', () => {
+          vm.setDefault({ duration: 'mockDuration' })
+          expect(vm.default.duration).toEqual('mockDuration')
         })
         it('should set transition', () => {
           vm.setDefault({ transition: 'mockTransition' })
@@ -62,13 +62,13 @@ describe('VueAlert.vue', () => {
         it('should use defaults', () => {
           vm.default.message = 'mockMessage'
           vm.default.type = 'mockType'
-          vm.default.delay = 'mockDelay'
+          vm.default.duration = 'mockDuration'
           vm.default.transition = 'mockTransition'
           vm.default.forceRender = 'mockForceRender'
           vm.setDefault()
           expect(vm.default.message).toEqual('mockMessage')
           expect(vm.default.type).toEqual('mockType')
-          expect(vm.default.delay).toEqual('mockDelay')
+          expect(vm.default.duration).toEqual('mockDuration')
           expect(vm.default.transition).toEqual('mockTransition')
           expect(vm.default.forceRender).toEqual('mockForceRender')
         })
@@ -93,7 +93,7 @@ describe('VueAlert.vue', () => {
         })
         it('should use args', () => {
           vm.show({
-            delay: 'mockDelay',
+            duration: 'mockDuration',
             forceRender: 'mockForceRender',
             message: 'mockMessage',
             transition: 'mockTransition',
@@ -106,7 +106,7 @@ describe('VueAlert.vue', () => {
         })
         it('should use defaults', () => {
           vm.setDefault({
-            delay: 'mockDelay',
+            duration: 'mockDuration',
             forceRender: 'mockForceRender',
             message: 'mockMessage',
             transition: 'mockTransition',
@@ -125,14 +125,14 @@ describe('VueAlert.vue', () => {
         })
         it('should setTimeout', () => {
           vm.show({
-            delay: 1000
+            duration: 1000
           })
           expect(setTimeout).toBeCalled()
           expect(setTimeout.mock.calls[0][1]).toBe(1000)
           vm.show = jest.fn()
           jest.runAllTimers()
           expect(vm.show).toBeCalledWith({
-            delay: false
+            duration: false
           })
         })
         it('should toggle triggerTransition if forceRender === true', () => {
