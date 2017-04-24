@@ -12,14 +12,16 @@ describe('VueAlert.vue', () => {
   it('should have a data with empty entries and loading true', () => {
     const defaultData = VueAlert.data()
     expect(defaultData).toMatchObject({
+      alertForceRender: false,
       alertMessage: '',
-      alertType: '',
       alertTransition: '',
+      alertType: '',
       default: {
+        delay: 5000,
+        forceRender: true,
         message: '',
-        type: 'info',
         transition: 'fade',
-        delay: 5000
+        type: 'info'
       }
     })
   })
@@ -53,16 +55,22 @@ describe('VueAlert.vue', () => {
           vm.setDefault({ transition: 'mockTransition' })
           expect(vm.default.transition).toEqual('mockTransition')
         })
+        it('should set forceRender', () => {
+          vm.setDefault({ forceRender: 'mockForceRender' })
+          expect(vm.default.forceRender).toEqual('mockForceRender')
+        })
         it('should use defaults', () => {
           vm.default.message = 'mockMessage'
           vm.default.type = 'mockType'
           vm.default.delay = 'mockDelay'
           vm.default.transition = 'mockTransition'
+          vm.default.forceRender = 'mockForceRender'
           vm.setDefault()
           expect(vm.default.message).toEqual('mockMessage')
           expect(vm.default.type).toEqual('mockType')
           expect(vm.default.delay).toEqual('mockDelay')
           expect(vm.default.transition).toEqual('mockTransition')
+          expect(vm.default.forceRender).toEqual('mockForceRender')
         })
         it('should return itself', () => {
           expect(vm.setDefault()).toEqual(vm)
@@ -85,26 +93,30 @@ describe('VueAlert.vue', () => {
         })
         it('should use args', () => {
           vm.show({
-            message: 'mockMessage',
-            type: 'mockType',
             delay: 'mockDelay',
-            transition: 'mockTransition'
+            forceRender: 'mockForceRender',
+            message: 'mockMessage',
+            transition: 'mockTransition',
+            type: 'mockType'
           })
           expect(vm.alertMessage).toEqual('mockMessage')
           expect(vm.alertType).toEqual('alert-mockType')
           expect(vm.alertTransition).toEqual('mockTransition')
+          expect(vm.alertForceRender).toEqual('mockForceRender')
         })
         it('should use defaults', () => {
           vm.setDefault({
-            message: 'mockMessage',
-            type: 'mockType',
             delay: 'mockDelay',
-            transition: 'mockTransition'
+            forceRender: 'mockForceRender',
+            message: 'mockMessage',
+            transition: 'mockTransition',
+            type: 'mockType'
           })
           vm.show()
           expect(vm.alertMessage).toEqual('mockMessage')
           expect(vm.alertType).toEqual('alert-mockType')
           expect(vm.alertTransition).toEqual('mockTransition')
+          expect(vm.alertForceRender).toEqual('mockForceRender')
         })
         it('should clearTimeout if already set', () => {
           vm.alertTimeout = 'mockTimeout'
@@ -122,6 +134,28 @@ describe('VueAlert.vue', () => {
           expect(vm.show).toBeCalledWith({
             delay: false
           })
+        })
+        it('should toggle triggerTransition if forceRender === true', () => {
+          vm.triggerTransition = false
+          vm.show({
+            forceRender: true
+          })
+          expect(vm.triggerTransition).toEqual(true)
+          vm.show({
+            forceRender: true
+          })
+          expect(vm.triggerTransition).toEqual(false)
+        })
+        it('should not toggle triggerTransition if alertForceRender === false', () => {
+          vm.triggerTransition = false
+          vm.show({
+            forceRender: false
+          })
+          expect(vm.triggerTransition).toEqual(false)
+          vm.show({
+            forceRender: false
+          })
+          expect(vm.triggerTransition).toEqual(false)
         })
       })
 

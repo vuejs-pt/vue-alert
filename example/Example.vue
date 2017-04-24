@@ -1,7 +1,14 @@
 <template>
   <div id="app" class="container">
     <h1>Example @vuejs-pt/vue-alert</h1>
-    <button class="btn btn-default" v-for="buttonType in this.types" @click="show">{{ buttonType }}</button>
+    <div>
+      <h2>Alert type</h2>
+      <button class="btn btn-default" v-for="button in this.types" @click="show">{{ button }}</button>
+    </div>
+    <div>
+      <h2>Alert transition</h2>
+      <button class="btn btn-default" v-for="button in this.transitions" @click="setTransition">{{ button }}</button>
+    </div>
     <vue-alert></vue-alert>
   </div>
 </template>
@@ -10,6 +17,7 @@
 export default {
   data () {
     return {
+      transitions: ['fade', 'smooth'],
       types: ['success', 'info', 'warning', 'danger']
     }
   },
@@ -21,6 +29,11 @@ export default {
     show (event) {
       const type = event.target.innerHTML
       this.$alert[type]({ message: `Alert type ${type}` })
+    },
+    setTransition (event) {
+      const transition = event.target.innerHTML
+      const forceRender = transition === 'fade'
+      this.$alert.setDefault({ transition: transition, forceRender })
     }
   }
 }

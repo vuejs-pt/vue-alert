@@ -1,6 +1,6 @@
 <template>
-  <transition :name="alertTransition"  mode="out-in">
-    <div class="vue-alert alert" :class="alertType" :key="triggerTransition">
+  <transition :name="alertTransition" mode="out-in">
+    <div class="vue-alert alert" :class="[ alertType, alertTransition ]" :key="triggerTransition">
       <p>{{alertMessage}}</p>
     </div>
   </transition>
@@ -11,31 +11,35 @@ export default {
   name: 'vue-alert',
   data () {
     return {
+      alertForceRender: false,
       alertMessage: '',
       alertType: '',
       alertTransition: '',
-      triggerTransition: false,
+      triggerTransition: true,
       default: {
+        delay: 5000,
+        forceRender: true,
         message: '',
         type: 'info',
-        transition: 'fade',
-        delay: 5000
+        transition: 'fade'
       }
     }
   },
   methods: {
-    setDefault ({ message = this.default.message, type = this.default.type, delay = this.default.delay, transition = this.default.transition } = {}) {
+    setDefault ({ message = this.default.message, type = this.default.type, delay = this.default.delay, transition = this.default.transition, forceRender = this.default.forceRender } = {}) {
       this.default.message = message
       this.default.type = type
       this.default.delay = delay
       this.default.transition = transition
+      this.default.forceRender = forceRender
       return this
     },
-    show ({ message = this.default.message, type = this.default.type, delay = this.default.delay, transition = this.default.transition } = {}) {
+    show ({ message = this.default.message, type = this.default.type, delay = this.default.delay, transition = this.default.transition, forceRender = this.default.forceRender } = {}) {
       this.alertShow = true
       this.alertMessage = message
       this.alertType = `alert-${type}`
       this.alertTransition = transition
+      this.alertForceRender = forceRender
       if (this.alertTimeout) {
         clearTimeout(this.alertTimeout)
       }
@@ -46,7 +50,9 @@ export default {
           })
         }, delay)
       }
-      this.triggerTransition = !this.triggerTransition
+      if (this.alertForceRender) {
+        this.triggerTransition = !this.triggerTransition
+      }
     },
     hide () {
       this.alertShow = false
@@ -76,6 +82,10 @@ export default {
 }
 .fade-enter, .fade-leave-to {
   opacity: 0
+}
+
+.smooth {
+  transition: all 0.5s ease;
 }
 
 .alert {
