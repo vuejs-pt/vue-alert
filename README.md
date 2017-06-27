@@ -117,7 +117,7 @@ The component `vue-alert` must be included either in the component using the `vu
 
 It is possible to access the `vue-alert` component using the `$alert` variable on the component instance as shown in the below example.
 
-The default bootstrap style are applied by default to the alert but this can be overriden by applying a new style to the following classes:
+The default bootstrap style are applied to the alert but this can be overriden by applying a new style to the following classes:
 - alert
 - alert-info
 - alert-success
@@ -180,8 +180,10 @@ Example.vue
 
 ```html
 <template>
-  <h1>Example component</h1>
-        <button class="btn btn-default" @click="showAlert">Click to use vue-alert</button>
+  <div>
+    <h1>Example component</h1>
+    <button class="btn btn-default" @click="showAlert">Click to use vue-alert</button>
+  </div>
 </template>
 
 <script>
