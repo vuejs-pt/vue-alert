@@ -3,9 +3,9 @@ const webpack = require('webpack')
 
 const webpackConfig = {
   devtool: 'inline-source-map',
-  entry: path.resolve(__dirname, 'app.js'),
+  entry: path.resolve(__dirname, '../example/app.js'),
   output: {
-    path: path.join(__dirname, 'dist/'),
+    path: path.join(__dirname, '../example/dist/'),
     filename: '[name].js',
     chunkFilename: '[id].chunk.js',
     publicPath: ''
@@ -30,7 +30,8 @@ const webpackConfig = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin()
   ]
 }
 

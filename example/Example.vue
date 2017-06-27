@@ -3,11 +3,11 @@
     <h1>Example @vuejs-pt/vue-alert</h1>
     <div>
       <h2>Alert type</h2>
-      <button class="btn btn-default" v-for="button in this.types" @click="show">{{ button }}</button>
+      <button class="btn btn-default" v-for="button in this.types" @click="show" :key="button">{{ button }}</button>
     </div>
     <div>
       <h2>Alert transition</h2>
-      <button class="btn btn-default" v-for="button in this.transitions" @click="setTransition">{{ button }}</button>
+      <button class="btn btn-default" v-for="button in this.transitions" @click="setTransition" :key="button">{{ button }}</button>
     </div>
     <vue-alert></vue-alert>
   </div>

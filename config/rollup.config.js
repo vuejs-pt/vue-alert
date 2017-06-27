@@ -6,7 +6,7 @@ import uglify from 'rollup-plugin-uglify'
 import babel from 'rollup-plugin-babel'
 import { minify } from 'uglify-es'
 
-const pack = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'package.json'), 'utf8'))
+const pack = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../package.json'), 'utf8'))
 const name = pack.name.replace(/^.*\/(.*)$/, '$1').replace('-', '')
 
 let cache

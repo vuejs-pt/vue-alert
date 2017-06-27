@@ -3,7 +3,8 @@
  */
 import VueAlert from './VueAlert.vue'
 
-function plugin (Vue, options) {
+/* global process */
+function plugin (Vue) {
   if (plugin.installed) return
   plugin.installed = true
   Vue.component('vue-alert', VueAlert)

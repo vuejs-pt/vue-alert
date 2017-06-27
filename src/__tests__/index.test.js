@@ -1,6 +1,7 @@
 import Vue from 'vue/dist/vue.js'
 import VueAlert from '../index'
 
+/* global global */
 describe('vuealert.min.js', () => {
   it('should install correctly', () => {
     Vue.use(VueAlert)
