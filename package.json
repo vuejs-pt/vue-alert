@@ -16,7 +16,7 @@
     "build:demo": "NODE_ENV=production node config/build.js",
     "clean": "rimraf dist/*",
     "dev": "cross-env NODE_ENV=development node config/dev-server.js",
-    "lint": "eslint --ext .js,.vue src",
+    "lint": "eslint --ext .js,.vue . --ignore-pattern dist/",
     "test": "npm run lint && jest",
     "test:dev": "jest --watchAll",
     "prebuild": "npm run clean -s",
