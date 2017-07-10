@@ -13,14 +13,14 @@
   },
   "scripts": {
     "build": "rollup -c config/rollup.config.js",
-    "build:demo": "NODE_ENV=production node config/build.js",
+    "build:example": "NODE_ENV=production node config/build.js",
     "clean": "rimraf dist/*",
     "dev": "cross-env NODE_ENV=development node config/dev-server.js",
     "lint": "eslint --ext .js,.vue . --ignore-pattern dist/",
     "test": "npm run lint && jest",
     "test:dev": "jest --watchAll",
     "prebuild": "npm run clean -s",
-    "preversion": "npm run build && npm run test && npm run build:demo",
+    "preversion": "npm run build && npm run test && npm run build:example",
     "version": "git add -A dist && git add -A example/dist",
     "postversion": "git push origin master --follow-tags && npm publish"
   },
