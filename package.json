@@ -58,7 +58,7 @@
     "babel-preset-vue": "^1.0.2",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
-    "eslint": "^4.2.0",
+    "eslint": "^4.3.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-html": "^3.1.1",
     "eslint-plugin-import": "^2.7.0",
@@ -75,7 +75,7 @@
     "jest-vue-preprocessor": "^1.0.1",
     "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
-    "optimize-css-assets-webpack-plugin": "^2.0.0",
+    "optimize-css-assets-webpack-plugin": "^3.0.0",
     "pre-commit": "^1.2.2",
     "rimraf": "^2.6.1",
     "rollup": "^0.45.2",
@@ -84,16 +84,16 @@
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify": "^2.0.1",
-    "rollup-plugin-vue": "^2.4.0",
-    "uglify-es": "^3.0.25",
-    "vue-loader": "^13.0.1",
+    "rollup-plugin-vue": "^2.4.1",
+    "uglify-es": "^3.0.26",
+    "vue-loader": "^13.0.2",
     "vue-template-compiler": "2.4.2",
-    "webpack": "^3.3.0",
+    "webpack": "^3.4.1",
     "webpack-dev-middleware": "^1.11.0",
     "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
-    "vue": "^2.0.0"
+    "vue": "2.x"
   }
 }
