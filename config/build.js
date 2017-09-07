@@ -5,7 +5,7 @@ var chalk = require('chalk')
 var webpack = require('webpack')
 var webpackConfig = require('./webpack.build.config.js')
 
-rm(path.join(__dirname, 'dist/'), err => {
+rm(path.join(__dirname, '../example/dist/'), err => {
   if (err) throw err
   webpack(webpackConfig, function (err, stats) {
     if (err) throw err

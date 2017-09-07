@@ -9,7 +9,7 @@ var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 var webpackConfig = merge(baseWebpackConfig, {
   devtool: '#source-map',
   output: {
-    path: path.resolve(__dirname, 'dist/'),
+    path: path.resolve(__dirname, '../example/dist/'),
     filename: 'js/[name].[hash].js',
     chunkFilename: 'js/[id].[chunkhash].js'
   },

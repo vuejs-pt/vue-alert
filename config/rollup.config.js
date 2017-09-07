@@ -12,11 +12,11 @@ const name = pack.name.replace(/^.*\/(.*)$/, '$1').replace('-', '')
 let cache
 
 const config = {
-  entry: 'src/index.js',
-  targets: [
-    { format: 'cjs', dest: `dist/${name}.common.js` }
+  input: 'src/index.js',
+  output: [
+    { format: 'cjs', file: `dist/${name}.common.js` }
   ],
-  moduleName: name,
+  name,
   plugins: [
     vue({
       compileTemplate: true,
