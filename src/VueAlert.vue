@@ -1,6 +1,6 @@
 <template>
   <transition :name="alertTransition" mode="out-in">
-    <div class="vue-alert alert" :class="[ alertType, alertTransition ]" :key="triggerTransition">
+    <div class="vue-alert alert" :class="[ alertType, alertTransition ]" :key="triggerTransition"  v-if="alertShow">
       <p>{{alertMessage}}</p>
     </div>
   </transition>
@@ -15,6 +15,7 @@ export default {
       alertMessage: '',
       alertType: '',
       alertTransition: '',
+      alertShow: true,
       triggerTransition: true,
       default: {
         duration: 5000,
@@ -26,6 +27,9 @@ export default {
     }
   },
   methods: {
+    clearDefault () {
+      this.default.type = 'hide'
+    },
     setDefault ({ message = this.default.message, type = this.default.type, duration = this.default.duration, transition = this.default.transition, forceRender = this.default.forceRender } = {}) {
       this.default.message = message
       this.default.type = type
@@ -45,9 +49,13 @@ export default {
       }
       if (duration) {
         this.alertTimeout = setTimeout(() => {
-          this.show({
-            duration: false
-          })
+          if (this.default.type == 'hide') {
+            this.hide()
+          } else {
+            this.show({
+              duration: false
+            })
+          }
         }, duration)
       }
       if (this.alertForceRender) {

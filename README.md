@@ -32,7 +32,7 @@ $ yarn add @vuejs-pt/vue-alert
 
 Available methods inside a VueJS component
 
-The same parameters apply to all the methods in `$alert` expect the method `hide`
+The same parameters apply to all the methods in `$alert` expect the method `hide` and `clearDefault`
 
 Parameter | Type |Default| Description
 --------- | ---- | ------|-----------
@@ -53,6 +53,11 @@ this.$alert.setDefault({
   transition,
   type
 })
+```
+
+## Clear default values
+```javascript
+this.$alert.clearDefault()
 ```
 
 ## Show an alert

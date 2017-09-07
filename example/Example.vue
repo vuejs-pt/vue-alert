@@ -9,6 +9,12 @@
       <h2>Alert transition</h2>
       <button class="btn btn-default" v-for="button in this.transitions" @click="setTransition" :key="button">{{ button }}</button>
     </div>
+    <div>
+      <h2>Alert options</h2>
+      <button class="btn btn-default" @click="callHide">hide</button>
+      <button class="btn btn-default" @click="callSetDefault">setDefault</button>
+      <button class="btn btn-default" @click="callClearDefault">clearDefault</button>
+    </div>
     <vue-alert></vue-alert>
   </div>
 </template>
@@ -34,6 +40,15 @@ export default {
       const transition = event.target.innerHTML
       const forceRender = transition === 'fade'
       this.$alert.setDefault({ transition: transition, forceRender })
+    },
+    callSetDefault () {
+      this.$alert.setDefault({ message: 'Default message' })
+    },
+    callClearDefault () {
+      this.$alert.clearDefault()
+    },
+    callHide () {
+      this.$alert.hide()
     }
   }
 }

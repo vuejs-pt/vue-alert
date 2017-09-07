@@ -34,6 +34,15 @@ describe('VueAlert.vue', () => {
         const Ctor = Vue.extend(VueAlert)
         vm = new Ctor().$mount()
       })
+      describe('clearDefault', () => {
+        it('should exist', () => {
+          expect(vm.clearDefault).toBeDefined()
+        })
+        it('should set alertShow to hide', () => {
+          vm.clearDefault()
+          expect(vm.default.type).toEqual('hide')
+        })
+      })
 
       describe('setDefault', () => {
         it('should exist', () => {
@@ -134,6 +143,19 @@ describe('VueAlert.vue', () => {
           expect(vm.show).toBeCalledWith({
             duration: false
           })
+        })
+        it('should not show if default.type === hide', () => {
+          vm.default.type = 'hide'
+          vm.show({
+            duration: 1000
+          })
+          expect(setTimeout).toBeCalled()
+          expect(setTimeout.mock.calls[0][1]).toBe(1000)
+          vm.show = jest.fn()
+          vm.hide = jest.fn()
+          jest.runAllTimers()
+          expect(vm.show).not.toBeCalled()
+          expect(vm.hide).toBeCalled()
         })
         it('should toggle triggerTransition if forceRender === true', () => {
           vm.triggerTransition = false
