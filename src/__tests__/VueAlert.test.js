@@ -21,7 +21,7 @@ describe('VueAlert.vue', () => {
         forceRender: true,
         message: '',
         transition: 'fade',
-        type: 'info'
+        type: 'hide'
       }
     })
   })
@@ -132,7 +132,8 @@ describe('VueAlert.vue', () => {
           vm.show()
           expect(clearTimeout).toBeCalledWith('mockTimeout')
         })
-        it('should setTimeout', () => {
+        it('should show if default.type !== hide', () => {
+          vm.default.type = 'info'
           vm.show({
             duration: 1000
           })

@@ -21,7 +21,7 @@ export default {
         duration: 5000,
         forceRender: true,
         message: '',
-        type: 'info',
+        type: 'hide',
         transition: 'fade'
       }
     }
