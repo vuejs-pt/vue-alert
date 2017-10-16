@@ -1,7 +1,5 @@
-import Vue from 'vue'
 import VueAlert from '../VueAlert.vue'
-
-Vue.config.productionTip = false
+import { shallow } from 'vue-test-utils'
 
 describe('VueAlert.vue', () => {
   it('has correct name', () => {
@@ -31,8 +29,7 @@ describe('VueAlert.vue', () => {
       let vm
 
       beforeEach(() => {
-        const Ctor = Vue.extend(VueAlert)
-        vm = new Ctor().$mount()
+        vm = shallow(VueAlert).vm
       })
       describe('clearDefault', () => {
         it('should exist', () => {

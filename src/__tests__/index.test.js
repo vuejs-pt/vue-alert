@@ -1,21 +1,24 @@
-import Vue from 'vue/dist/vue.js'
 import VueAlert from '../index'
+import { createLocalVue, mount } from 'vue-test-utils'
 
 /* global global */
 describe('vuealert.min.js', () => {
-  it('should install correctly', () => {
-    Vue.use(VueAlert)
-    const vm = new Vue({
-      template: '<div id="app"><vue-alert></vue-alert></div>'
-    }).$mount()
-    expect(vm.$alert).not.toBeNull()
+  it('should install correctly with vue-test-utils', () => {
+    const localVue = createLocalVue()
+    localVue.use(VueAlert)
+    const vm = mount({template: '<div id="app"><vue-alert></vue-alert></div>'}, {
+      localVue
+    }).vm
+    expect(vm.$alert).toBeDefined()
   })
-  it('should warn if there is no vue-alert component', () => {
+  
+  it('should warn if there is no vue-alert component with vue-test-utils', () => {
     global.console = { warn: jest.fn() }
-    Vue.use(VueAlert)
-    const vm = new Vue({
-      template: '<div></div>'
-    }).$mount()
+    const localVue = createLocalVue()
+    localVue.use(VueAlert)
+    const vm = mount({template: '<div></div>'}, {
+      localVue
+    }).vm
     expect(vm.$alert).toBeNull()
     expect(console.warn).toBeCalledWith('Vue-alert component must be part of this component scope or any of the parents scope.')
   })
