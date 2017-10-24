@@ -42,7 +42,7 @@ export default {
       this.$alert.setDefault({ transition: transition, forceRender })
     },
     callSetDefault () {
-      this.$alert.setDefault({ message: 'Default message' })
+      this.$alert.setDefault({ message: 'Default message', type: 'info' })
     },
     callClearDefault () {
       this.$alert.clearDefault()
