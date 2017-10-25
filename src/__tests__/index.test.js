@@ -11,7 +11,7 @@ describe('vuealert.min.js', () => {
     }).vm
     expect(vm.$alert).toBeDefined()
   })
-  
+
   it('should warn if there is no vue-alert component with vue-test-utils', () => {
     global.console = { warn: jest.fn() }
     const localVue = createLocalVue()

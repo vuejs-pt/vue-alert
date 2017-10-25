@@ -5,7 +5,7 @@ import VueAlert from './VueAlert.vue'
 
 /* global process */
 const vueAlertWrapper = {
-  install(Vue) {
+  install (Vue) {
     if (this.installed) return
     this.installed = true
     Vue.component('vue-alert', VueAlert)

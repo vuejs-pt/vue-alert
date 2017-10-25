@@ -21,6 +21,7 @@
 
 <script>
 export default {
+  name: 'example',
   data () {
     return {
       transitions: ['fade', 'smooth'],
