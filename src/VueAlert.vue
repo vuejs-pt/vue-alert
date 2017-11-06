@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'vue-alert',
+  name: 'VueAlert',
   data () {
     return {
       alertForceRender: false,

@@ -20,6 +20,6 @@ describe('vuealert.min.js', () => {
       localVue
     }).vm
     expect(vm.$alert).toBeNull()
-    expect(console.warn).toBeCalledWith('Vue-alert component must be part of this component scope or any of the parents scope.')
+    expect(console.warn).toBeCalledWith('VueAlert component must be part of this component scope or any of the parents scope.')
   })
 })

@@ -4,7 +4,7 @@ import { shallow } from 'vue-test-utils'
 describe('VueAlert.vue', () => {
   it('has correct name', () => {
     expect(VueAlert).toBeDefined()
-    expect(VueAlert.name).toBe('vue-alert')
+    expect(VueAlert.name).toBe('VueAlert')
   })
 
   it('should have a data with empty entries and loading true', () => {
