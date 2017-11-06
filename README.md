@@ -137,7 +137,7 @@ main.js
 
 ```javascript
 import Vue from 'vue'
-import VueAlert from 'vue-alert'
+import VueAlert from '@vuejs-pt/vue-alert'
 import App from './App'
 
 Vue.use(VueAlert)
