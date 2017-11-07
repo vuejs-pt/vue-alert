@@ -16,6 +16,7 @@ const vueAlertWrapper = {
           while (el) {
             for (let i = 0; i < el.$children.length; i++) {
               const child = el.$children[i]
+              /* istanbul ignore else */
               if (child.$options._componentTag === 'vue-alert') {
                 return child
               }
@@ -34,6 +35,8 @@ const vueAlertWrapper = {
 
 export default vueAlertWrapper
 
+// Install by default if using the script tag
+/* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.use(vueAlertWrapper)
 }

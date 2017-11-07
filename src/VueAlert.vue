@@ -47,6 +47,7 @@ export default {
       if (this.alertTimeout) {
         clearTimeout(this.alertTimeout)
       }
+      /* istanbul ignore else */
       if (duration) {
         this.alertTimeout = setTimeout(() => {
           if (this.default.type == 'hide') {
