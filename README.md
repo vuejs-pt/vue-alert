@@ -1,9 +1,9 @@
 # @vuejs-pt/vue-alert 
 [![CircleCI](https://img.shields.io/circleci/project/github/vuejs-pt/vue-alert.svg)](https://circleci.com/gh/vuejs-pt/vue-alert)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vuejs-pt/vue-alert/master/LICENSE)
+[![NPM downloads](https://img.shields.io/npm/dm/@vuejs-pt/vue-alert.svg)](https://www.npmjs.com/package/@vuejs-pt/vue-alert)
+[![NPM version](https://img.shields.io/npm/v/@vuejs-pt/vue-alert.svg)](https://www.npmjs.com/package/@vuejs-pt/vue-alert)
 [![Vue 2.x](https://img.shields.io/badge/vue-2.x-green.svg)](https://vuejs.org/)
-[![npm](https://img.shields.io/npm/v/@vuejs-pt/vue-alert.svg)](https://www.npmjs.com/package/@vuejs-pt/vue-alert)
-[![GitHub issues](https://img.shields.io/github/issues/vuejs-pt/vue-alert.svg)](https://github.com/vuejs-pt/vue-alert/issues)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vuejs-pt/vue-alert/master/LICENSE)
 
 # Table of Contents
 * [___Demo___](#demo)
