@@ -1,5 +1,6 @@
 # @vuejs-pt/vue-alert 
 [![CircleCI](https://img.shields.io/circleci/project/github/vuejs-pt/vue-alert.svg)](https://circleci.com/gh/vuejs-pt/vue-alert)
+[![Coverage Status](https://coveralls.io/repos/github/vuejs-pt/vue-alert/badge.svg?branch=master)](https://coveralls.io/github/vuejs-pt/vue-alert?branch=master)
 [![NPM downloads](https://img.shields.io/npm/dm/@vuejs-pt/vue-alert.svg)](https://www.npmjs.com/package/@vuejs-pt/vue-alert)
 [![NPM version](https://img.shields.io/npm/v/@vuejs-pt/vue-alert.svg)](https://www.npmjs.com/package/@vuejs-pt/vue-alert)
 [![Vue 2.x](https://img.shields.io/badge/vue-2.x-green.svg)](https://vuejs.org/)
