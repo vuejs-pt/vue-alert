@@ -15,12 +15,10 @@ jobs:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
       - run: yarn
-
       - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
       - persist_to_workspace:
           root: ~/project
           paths:
@@ -30,14 +28,14 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-        at: ~/project
+          at: ~/project
       - run: yarn build
 
   test:
     <<: *defaults
     steps:
       - attach_workspace:
-        at: ~/project
+          at: ~/project
       - run: yarn test
       - run: yarn codecov
 
@@ -46,9 +44,9 @@ workflows:
   install-and-parallel-build-test:
     jobs:
       - install
-      - build
+      - build:
         requires:
           - install
-      - test
+      - test:
         requires:
           - install
