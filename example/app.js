@@ -13,6 +13,6 @@ if (process.env.NODE_ENV !== 'production') {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  template: '<Example/>',
-  components: { Example }
+  components: { Example },
+  template: '<Example/>'
 })
