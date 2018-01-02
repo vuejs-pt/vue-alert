@@ -14,9 +14,8 @@ let cache
 const config = {
   input: 'src/index.js',
   output: [
-    { format: 'cjs', file: `dist/${name}.common.js` }
+    { format: 'cjs', file: `dist/${name}.common.js`, name }
   ],
-  name,
   plugins: [
     vue({
       compileTemplate: true,
@@ -26,7 +25,7 @@ const config = {
     buble(),
     uglify({}, minify)
   ],
-  useStrict: false,
+  strict: false,
   cache
 }
 
