@@ -1,5 +1,5 @@
 import VueAlert from '../index'
-import { createLocalVue, mount } from 'vue-test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 
 /* global global */
 describe('vuealert.min.js', () => {

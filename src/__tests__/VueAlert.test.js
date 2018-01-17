@@ -1,5 +1,5 @@
 import VueAlert from '../VueAlert.vue'
-import { shallow } from 'vue-test-utils'
+import { shallow } from '@vue/test-utils'
 
 describe('VueAlert.vue', () => {
   it('has correct name', () => {

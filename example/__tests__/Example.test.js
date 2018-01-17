@@ -1,5 +1,5 @@
 import Example from '../Example.vue'
-import { mount, shallow } from 'vue-test-utils'
+import { mount, shallow } from '@vue/test-utils'
 
 describe('Example.vue', () => {
   it('has correct name', () => {
