@@ -32,7 +32,8 @@ describe('Example.vue', () => {
         vm = shallow(Example, {
           mocks: {
             $alert
-          }
+          },
+          stubs: ['vue-alert']
         }).vm
       })
 
@@ -44,7 +45,8 @@ describe('Example.vue', () => {
           vm = mount(Example, {
             mocks: {
               $alert
-            }
+            },
+            stubs: ['vue-alert']
           }).vm
           expect(vm.$alert.setDefault).toBeCalledWith({ message: 'Default message' })
           expect(vm.$alert.success).toBeCalledWith({ message: 'Component mounted!' })
@@ -77,7 +79,7 @@ describe('Example.vue', () => {
           })
           expect(vm.$alert.setDefault).toBeCalledWith({ transition: 'foo', forceRender: false })
         })
-        it('should trigger $his.$alert.setDefault with the transition and forceRender true if received from an HTML event with "fade"', () => {
+        it('should trigger this.$alert.setDefault with the transition and forceRender true if received from an HTML event with "fade"', () => {
           vm.setTransition({
             target: {
               innerHTML: 'fade'
