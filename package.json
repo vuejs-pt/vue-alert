@@ -7,10 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/vuejs-pt/vue-alert.git"
   },
-  "author": {
-    "name": "David Picarra",
-    "email": "daviddcp@gmail.com"
-  },
+  "author": "David Piçarra (https://www.davidpicarra.com/)",
   "engines": {
     "node": ">=4"
   },
