@@ -12,11 +12,11 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-{{ checksum "yarn.lock" }}
             - v1-dependencies-
-      - run: npm install
+      - run: yarn
       - save_cache:
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          key: v1-dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - persist_to_workspace:
@@ -29,15 +29,15 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/project
-      - run: npm run build
+      - run: yarn build
 
   test:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/project
-      - run: npm test
-      - run: npm run codecov
+      - run: yarn test
+      - run: yarn codecov
 
 workflows:
   version: 2
