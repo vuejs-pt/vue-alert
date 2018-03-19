@@ -25,7 +25,6 @@ const config = {
     buble(),
     uglify({}, minify)
   ],
-  strict: false,
   cache
 }
 
