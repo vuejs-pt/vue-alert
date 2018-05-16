@@ -13,7 +13,14 @@ const webpackConfig = {
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.vue$/, loader: 'vue-loader' }
+      { test: /\.vue$/, loader: 'vue-loader' },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
+      }
     ]
   },
   resolve: {
@@ -22,10 +29,6 @@ const webpackConfig = {
     }
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'shared',
-      filename: 'shared.js'
-    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     }),

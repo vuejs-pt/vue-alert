@@ -1,5 +1,5 @@
 import VueAlert from '../VueAlert.vue'
-import { shallow } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 
 describe('VueAlert.vue', () => {
   it('has correct name', () => {
@@ -29,7 +29,7 @@ describe('VueAlert.vue', () => {
       let vm
 
       beforeEach(() => {
-        vm = shallow(VueAlert).vm
+        vm = shallowMount(VueAlert).vm
       })
       describe('clearDefault', () => {
         it('should exist', () => {

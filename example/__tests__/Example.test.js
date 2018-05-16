@@ -1,5 +1,5 @@
 import Example from '../Example.vue'
-import { mount, shallow } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 
 describe('Example.vue', () => {
   it('has correct name', () => {
@@ -29,7 +29,7 @@ describe('Example.vue', () => {
         for (const value of Object.values($alert)) {
           value.mockReset()
         }
-        vm = shallow(Example, {
+        vm = shallowMount(Example, {
           mocks: {
             $alert
           },
