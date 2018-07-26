@@ -2,7 +2,7 @@ import path from 'path'
 import fs from 'fs'
 import vue from 'rollup-plugin-vue'
 import buble from 'rollup-plugin-buble'
-import uglify from 'rollup-plugin-uglify'
+import { uglify } from 'rollup-plugin-uglify'
 import babel from 'rollup-plugin-babel'
 import { minify } from 'uglify-es'
 
