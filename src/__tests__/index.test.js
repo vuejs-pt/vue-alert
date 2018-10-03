@@ -6,7 +6,7 @@ describe('vuealert.min.js', () => {
   it('should install correctly', () => {
     const localVue = createLocalVue()
     localVue.use(VueAlert)
-    const vm = mount({template: '<div id="app"><vue-alert></vue-alert></div>'}, {
+    const vm = mount({ template: '<div id="app"><vue-alert></vue-alert></div>' }, {
       localVue
     }).vm
     expect(vm.$alert).toBeDefined()
@@ -16,7 +16,7 @@ describe('vuealert.min.js', () => {
     global.console = { warn: jest.fn() }
     const localVue = createLocalVue()
     localVue.use(VueAlert)
-    const vm = mount({template: '<div></div>'}, {
+    const vm = mount({ template: '<div></div>' }, {
       localVue
     }).vm
     expect(vm.$alert).toBeNull()
@@ -29,7 +29,7 @@ describe('vuealert.min.js', () => {
     process.env.NODE_ENV = 'production'
     const localVue = createLocalVue()
     localVue.use(VueAlert)
-    const vm = mount({template: '<div></div>'}, {
+    const vm = mount({ template: '<div></div>' }, {
       localVue
     }).vm
     expect(vm.$alert).toBeNull()
