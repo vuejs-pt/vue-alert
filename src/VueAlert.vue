@@ -1,7 +1,15 @@
 <template>
-  <transition :name="alertTransition" mode="out-in">
-    <div class="vue-alert alert" :class="[ alertType, alertTransition ]" :key="triggerTransition"  v-if="alertShow">
-      <p>{{alertMessage}}</p>
+  <transition
+    :name="alertTransition"
+    mode="out-in"
+  >
+    <div
+      v-if="alertShow"
+      :key="triggerTransition"
+      :class="[ alertType, alertTransition ]"
+      class="vue-alert alert"
+    >
+      <p>{{ alertMessage }}</p>
     </div>
   </transition>
 </template>
@@ -50,7 +58,7 @@ export default {
       /* istanbul ignore else */
       if (duration) {
         this.alertTimeout = setTimeout(() => {
-          if (this.default.type == 'hide') {
+          if (this.default.type === 'hide') {
             this.hide()
           } else {
             this.show({

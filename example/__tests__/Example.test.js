@@ -4,7 +4,7 @@ import { mount, shallowMount } from '@vue/test-utils'
 describe('Example.vue', () => {
   it('has correct name', () => {
     expect(Example).toBeDefined()
-    expect(Example.name).toBe('example')
+    expect(Example.name).toBe('Example')
   })
 
   it('should have a data with transitions and types', () => {

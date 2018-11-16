@@ -1,27 +1,49 @@
 <template>
-  <div id="app" class="container">
+  <div
+    id="app"
+    class="container"
+  >
     <h1>Example @vuejs-pt/vue-alert</h1>
     <div>
       <h2>Alert type</h2>
-      <button class="btn btn-default" v-for="button in this.types" @click="show" :key="button">{{ button }}</button>
+      <button
+        v-for="button in types"
+        :key="button"
+        class="btn btn-default"
+        @click="show"
+      >{{ button }}</button>
     </div>
     <div>
       <h2>Alert transition</h2>
-      <button class="btn btn-default" v-for="button in this.transitions" @click="setTransition" :key="button">{{ button }}</button>
+      <button
+        v-for="button in transitions"
+        :key="button"
+        class="btn btn-default"
+        @click="setTransition"
+      >{{ button }}</button>
     </div>
     <div>
       <h2>Alert options</h2>
-      <button class="btn btn-default" @click="callHide">hide</button>
-      <button class="btn btn-default" @click="callSetDefault">setDefault</button>
-      <button class="btn btn-default" @click="callClearDefault">clearDefault</button>
+      <button
+        class="btn btn-default"
+        @click="callHide"
+      >hide</button>
+      <button
+        class="btn btn-default"
+        @click="callSetDefault"
+      >setDefault</button>
+      <button
+        class="btn btn-default"
+        @click="callClearDefault"
+      >clearDefault</button>
     </div>
-    <vue-alert></vue-alert>
+    <vue-alert />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'example',
+  name: 'Example',
   data () {
     return {
       transitions: ['fade', 'smooth'],
