@@ -1,7 +1,9 @@
 const path = require('path')
 const webpack = require('webpack')
+const { VueLoaderPlugin } = require('vue-loader')
 
 const webpackConfig = {
+  mode: 'development',
   devtool: 'inline-source-map',
   entry: path.resolve(__dirname, '../example/app.js'),
   output: {
@@ -29,6 +31,7 @@ const webpackConfig = {
     }
   },
   plugins: [
+    new VueLoaderPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     }),

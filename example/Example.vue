@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     show (event) {
-      const type = event.target.innerHTML
+      const type = event.target.innerHTML.trim()
       this.$alert[type]({ message: `Alert type ${type}` })
     },
     setTransition (event) {
