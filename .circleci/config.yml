@@ -3,7 +3,7 @@ version: 2
 defaults: &defaults
   working_directory: ~/project/vue-alert
   docker:
-    - image: circleci/node:9
+    - image: circleci/node:8
 
 jobs:
   install:
