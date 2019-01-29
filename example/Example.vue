@@ -11,7 +11,9 @@
         :key="button"
         class="btn btn-default"
         @click="show"
-      >{{ button }}</button>
+      >
+        {{ button }}
+      </button>
     </div>
     <div>
       <h2>Alert transition</h2>
@@ -20,24 +22,32 @@
         :key="button"
         class="btn btn-default"
         @click="setTransition"
-      >{{ button }}</button>
+      >
+        {{ button }}
+      </button>
     </div>
     <div>
       <h2>Alert options</h2>
       <button
         class="btn btn-default"
         @click="callHide"
-      >hide</button>
+      >
+        hide
+      </button>
       <button
         class="btn btn-default"
         @click="callSetDefault"
-      >setDefault</button>
+      >
+        setDefault
+      </button>
       <button
         class="btn btn-default"
         @click="callClearDefault"
-      >clearDefault</button>
+      >
+        clearDefault
+      </button>
     </div>
-    <vue-alert />
+    <VueAlert />
   </div>
 </template>
 

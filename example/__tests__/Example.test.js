@@ -33,7 +33,7 @@ describe('Example.vue', () => {
           mocks: {
             $alert
           },
-          stubs: ['vue-alert']
+          stubs: ['VueAlert']
         }).vm
       })
 
@@ -46,7 +46,7 @@ describe('Example.vue', () => {
             mocks: {
               $alert
             },
-            stubs: ['vue-alert']
+            stubs: ['VueAlert']
           }).vm
           expect(vm.$alert.setDefault).toBeCalledWith({ message: 'Default message' })
           expect(vm.$alert.success).toBeCalledWith({ message: 'Component mounted!' })

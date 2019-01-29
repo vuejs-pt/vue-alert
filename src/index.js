@@ -8,7 +8,7 @@ const vueAlertWrapper = {
   install (Vue) {
     if (this.installed) return
     this.installed = true
-    Vue.component('vue-alert', VueAlert)
+    Vue.component('VueAlert', VueAlert)
     Object.defineProperties(Vue.prototype, {
       $alert: {
         get () {
@@ -17,7 +17,7 @@ const vueAlertWrapper = {
             for (let i = 0; i < el.$children.length; i++) {
               const child = el.$children[i]
               /* istanbul ignore else */
-              if (child.$options._componentTag === 'vue-alert') {
+              if (child.$options._componentTag === 'VueAlert') {
                 return child
               }
             }

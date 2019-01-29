@@ -1,4 +1,4 @@
-# @vuejs-pt/vue-alert 
+# @vuejs-pt/vue-alert
 [![CircleCI](https://img.shields.io/circleci/project/github/vuejs-pt/vue-alert.svg)](https://circleci.com/gh/vuejs-pt/vue-alert)
 [![Coverage Status](https://img.shields.io/codecov/c/github/vuejs-pt/vue-alert.svg)](https://codecov.io/github/vuejs-pt/vue-alert?branch=master)
 [![NPM downloads](https://img.shields.io/npm/dm/@vuejs-pt/vue-alert.svg)](https://www.npmjs.com/package/@vuejs-pt/vue-alert)
@@ -18,7 +18,7 @@
 [__Demo__](https://vuejs-pt.github.io/vue-alert/example/dist/)
 
 # Requirements
-- [Vue.js](https://github.com/vuejs/vue) `2.x`  
+- [Vue.js](https://github.com/vuejs/vue) `2.x`
 
 # Installation
 ```bash
@@ -119,9 +119,9 @@ this.$alert.hide()
 
 # Usage
 
-The component `vue-alert` must be included either in the component using the `vue-alert` or a parent of this component, for example if there's a `vue-alert` instance at the root of the app.
+The component `VueAlert` must be included either in the component using the `VueAlert` or a parent of this component, for example if there's a `VueAlert` instance at the root of the app.
 
-It is possible to access the `vue-alert` component using the `$alert` variable on the component instance as shown in the below example.
+It is possible to access the `VueAlert` component using the `$alert` variable on the component instance as shown in the below example.
 
 The default bootstrap style are applied to the alert but this can be overriden by applying a new style to the following classes:
 - alert
@@ -157,8 +157,8 @@ App.vue
 ```html
 <template>
     <div id="app">
-        <vue-alert></vue-alert>
-        <example></example>
+        <VueAlert></VueAlert>
+        <Example></Example>
     </div>
 </template>
 

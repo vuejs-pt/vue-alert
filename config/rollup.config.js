@@ -1,5 +1,6 @@
 import path from 'path'
 import fs from 'fs'
+import commonjs from 'rollup-plugin-commonjs'
 import vue from 'rollup-plugin-vue'
 import buble from 'rollup-plugin-buble'
 import { uglify } from 'rollup-plugin-uglify'
@@ -17,6 +18,7 @@ const config = {
     { format: 'cjs', file: `dist/${name}.common.js`, name }
   ],
   plugins: [
+    commonjs(),
     vue({
       compileTemplate: true,
       css: true
