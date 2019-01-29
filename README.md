@@ -6,6 +6,8 @@
 [![Vue 2.x](https://img.shields.io/badge/vue-2.x-green.svg)](https://vuejs.org/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/vuejs-pt/vue-alert/master/LICENSE)
 
+> Starting from v2 the Vue component is named `VueAlert` instead of `vue-alert`
+
 # Table of Contents
 * [___Demo___](#demo)
 * [___Requirements___](#requirements)
