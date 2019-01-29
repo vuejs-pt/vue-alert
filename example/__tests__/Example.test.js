@@ -48,8 +48,8 @@ describe('Example.vue', () => {
             },
             stubs: ['VueAlert']
           }).vm
-          expect(vm.$alert.setDefault).toBeCalledWith({ message: 'Default message' })
-          expect(vm.$alert.success).toBeCalledWith({ message: 'Component mounted!' })
+          expect(vm.$alert.setDefault).toHaveBeenCalledWith({ message: 'Default message' })
+          expect(vm.$alert.success).toHaveBeenCalledWith({ message: 'Component mounted!' })
         })
       })
 
@@ -63,7 +63,7 @@ describe('Example.vue', () => {
               innerHTML: 'success'
             }
           })
-          expect(vm.$alert['success']).toBeCalledWith({ message: 'Alert type success' })
+          expect(vm.$alert['success']).toHaveBeenCalledWith({ message: 'Alert type success' })
         })
       })
 
@@ -77,7 +77,7 @@ describe('Example.vue', () => {
               innerHTML: 'foo'
             }
           })
-          expect(vm.$alert.setDefault).toBeCalledWith({ transition: 'foo', forceRender: false })
+          expect(vm.$alert.setDefault).toHaveBeenCalledWith({ transition: 'foo', forceRender: false })
         })
         it('should trigger this.$alert.setDefault with the transition and forceRender true if received from an HTML event with "fade"', () => {
           vm.setTransition({
@@ -85,7 +85,7 @@ describe('Example.vue', () => {
               innerHTML: 'fade'
             }
           })
-          expect(vm.$alert.setDefault).toBeCalledWith({ transition: 'fade', forceRender: true })
+          expect(vm.$alert.setDefault).toHaveBeenCalledWith({ transition: 'fade', forceRender: true })
         })
       })
 
@@ -95,7 +95,7 @@ describe('Example.vue', () => {
         })
         it('should trigger this.$alert.setDefault with message and type', () => {
           vm.callSetDefault()
-          expect(vm.$alert.setDefault).toBeCalledWith({ message: 'Default message', type: 'info' })
+          expect(vm.$alert.setDefault).toHaveBeenCalledWith({ message: 'Default message', type: 'info' })
         })
       })
 
@@ -105,7 +105,7 @@ describe('Example.vue', () => {
         })
         it('should trigger this.$alert.setDefault', () => {
           vm.callClearDefault()
-          expect(vm.$alert.setDefault).toBeCalled()
+          expect(vm.$alert.setDefault).toHaveBeenCalled()
         })
       })
 
@@ -115,7 +115,7 @@ describe('Example.vue', () => {
         })
         it('should trigger this.$alert.hide', () => {
           vm.callHide()
-          expect(vm.$alert.hide).toBeCalled()
+          expect(vm.$alert.hide).toHaveBeenCalled()
         })
       })
     })

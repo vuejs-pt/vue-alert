@@ -1,7 +1,6 @@
 import VueAlert from '../index'
 import { createLocalVue, mount } from '@vue/test-utils'
 
-/* global global */
 describe('vuealert.min.js', () => {
   it('should install correctly', () => {
     const localVue = createLocalVue()
@@ -20,7 +19,7 @@ describe('vuealert.min.js', () => {
       localVue
     }).vm
     expect(vm.$alert).toBeNull()
-    expect(console.warn).toBeCalledWith('VueAlert component must be part of this component scope or any of the parents scope.')
+    expect(console.warn).toHaveBeenCalledWith('VueAlert component must be part of this component scope or any of the parents scope.')
     console.warn.mockRestore()
   })
 
@@ -33,7 +32,7 @@ describe('vuealert.min.js', () => {
       localVue
     }).vm
     expect(vm.$alert).toBeNull()
-    expect(console.warn).not.toBeCalled()
+    expect(console.warn).not.toHaveBeenCalled()
     process.env.NODE_ENV = 'test'
     console.warn.mockRestore()
   })

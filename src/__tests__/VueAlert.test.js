@@ -127,18 +127,18 @@ describe('VueAlert.vue', () => {
         it('should clearTimeout if already set', () => {
           vm.alertTimeout = 'mockTimeout'
           vm.show()
-          expect(clearTimeout).toBeCalledWith('mockTimeout')
+          expect(clearTimeout).toHaveBeenCalledWith('mockTimeout')
         })
         it('should show if default.type !== hide', () => {
           vm.default.type = 'info'
           vm.show({
             duration: 1000
           })
-          expect(setTimeout).toBeCalled()
+          expect(setTimeout).toHaveBeenCalled()
           expect(setTimeout.mock.calls[0][1]).toBe(1000)
           vm.show = jest.fn()
           jest.runAllTimers()
-          expect(vm.show).toBeCalledWith({
+          expect(vm.show).toHaveBeenCalledWith({
             duration: false
           })
         })
@@ -147,13 +147,13 @@ describe('VueAlert.vue', () => {
           vm.show({
             duration: 1000
           })
-          expect(setTimeout).toBeCalled()
+          expect(setTimeout).toHaveBeenCalled()
           expect(setTimeout.mock.calls[0][1]).toBe(1000)
           vm.show = jest.fn()
           vm.hide = jest.fn()
           jest.runAllTimers()
-          expect(vm.show).not.toBeCalled()
-          expect(vm.hide).toBeCalled()
+          expect(vm.show).not.toHaveBeenCalled()
+          expect(vm.hide).toHaveBeenCalled()
         })
         it('should toggle triggerTransition if forceRender === true', () => {
           vm.triggerTransition = false
@@ -190,7 +190,7 @@ describe('VueAlert.vue', () => {
         it('should clearTimeout if already set', () => {
           vm.alertTimeout = 'mockTimeout'
           vm.hide()
-          expect(clearTimeout).toBeCalledWith('mockTimeout')
+          expect(clearTimeout).toHaveBeenCalledWith('mockTimeout')
         })
       })
 
@@ -204,7 +204,7 @@ describe('VueAlert.vue', () => {
           vm.danger({
             message: 'mockMessage'
           })
-          expect(vm.show).toBeCalledWith({
+          expect(vm.show).toHaveBeenCalledWith({
             type: 'danger',
             message: 'mockMessage'
           })
@@ -221,7 +221,7 @@ describe('VueAlert.vue', () => {
           vm.info({
             message: 'mockMessage'
           })
-          expect(vm.show).toBeCalledWith({
+          expect(vm.show).toHaveBeenCalledWith({
             type: 'info',
             message: 'mockMessage'
           })
@@ -238,7 +238,7 @@ describe('VueAlert.vue', () => {
           vm.success({
             message: 'mockMessage'
           })
-          expect(vm.show).toBeCalledWith({
+          expect(vm.show).toHaveBeenCalledWith({
             type: 'success',
             message: 'mockMessage'
           })
@@ -255,7 +255,7 @@ describe('VueAlert.vue', () => {
           vm.warning({
             message: 'mockMessage'
           })
-          expect(vm.show).toBeCalledWith({
+          expect(vm.show).toHaveBeenCalledWith({
             type: 'warning',
             message: 'mockMessage'
           })
