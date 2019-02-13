@@ -1,5 +1,5 @@
 <template>
-  <transition
+  <Transition
     :name="alertTransition"
     mode="out-in"
   >
@@ -11,7 +11,7 @@
     >
       <p>{{ alertMessage }}</p>
     </div>
-  </transition>
+  </Transition>
 </template>
 
 <script>
